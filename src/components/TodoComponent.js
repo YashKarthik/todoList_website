@@ -18,18 +18,26 @@ const TodoComponent = (props) => {
 			display='flex'
 			flexDirection='column'
 			justifyContent='center'
-			colorScheme='white'
 		>
-			<HStack spacing='150px'>
+			<HStack
+				display='flex'
+				flexDir='row'
+				justifyContent='space-between'
+			>
 				<Text padding='15px'>{props.text}</Text>
-				<Button
-					colorScheme="blue"
-					size='md'
-					variant='ghost'
-					padding='0px'
+				<Box
+					padding='10px'
 				>
-					<IoMdTrash />
-				</Button>
+					<Button
+						colorScheme="blue"
+						size='md'
+						variant='ghost'
+						padding='0px'
+						onClick={() => props.handleDelete(props.id)}
+					>
+						<IoMdTrash />
+					</Button>
+				</Box>
 				
 			</HStack>
 		</Box>
