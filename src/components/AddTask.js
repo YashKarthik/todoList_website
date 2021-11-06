@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   FormControl,
-  FormErrorMessage,
 	HStack,
 	Input,
 	Button
@@ -10,20 +9,23 @@ import {
 //import { useState } from 'react'
 const AddTask = (props) => {
 
-	//const [ title, setTitle ] = useState('')
-	
-	const handleChange = (props) => {
-		console.log(props.target.value)
+	let tempInput = '';
+	const handleChange = () => {
+		tempInput.length > 0
+			? props.handleSubmit(tempInput)
+			: alert('enter the todo')
 	}
-
 
 	return (
 		<>
-			<HStack>
-				<FormControl id="email">
+			<HStack
+				paddingTop='50px'
+			>
+				<FormControl id="text">
   			<Input
 					type="text"
 					placeholder='Add task'
+					onChange={(e => tempInput = e.target.value)}
 				/>
 				</FormControl>
 				<Button

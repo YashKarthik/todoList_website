@@ -13,8 +13,8 @@ const TodoComponent = (props) => {
 			border='1px solid'
 			borderColor="gray.700"
 			borderRadius='8px'
-			//backgroundColor='gray.700'
-			w='400px' h='60px'
+			minW='400px' minH='60px'
+			maxW='400px'
 			display='flex'
 			flexDirection='column'
 			justifyContent='center'
@@ -24,7 +24,7 @@ const TodoComponent = (props) => {
 				flexDir='row'
 				justifyContent='space-between'
 			>
-				<Text padding='15px'>{props.text}</Text>
+				<Text maxW='350px' padding='15px'>{props.text}</Text>
 				<Box
 					padding='10px'
 				>
